@@ -36,9 +36,12 @@ const MultiStageForm = () => {
   };
 
   const handleSubmit = () => {
-    dispatch(addProduct({ id: Date.now(), ...formData }));
-    setStep(1);
-    setFormData({});
+    // dispatch(addProduct({ id: Date.now(), ...formData }));
+    // setStep(1);
+    // setFormData({});
+
+    console.log(formData);
+    
   };
 
   const steps = [
@@ -49,22 +52,25 @@ const MultiStageForm = () => {
   ];
 
   return (
-    <div className="  max-w-7xl mx-auto  rounded-lg shadow-md mt-12 p-4">
+    <div className="  max-w-7xl mx-auto  rounded-lg   mt-12 p-4">
       {/* Step Indicator */}
       <div className="flex flex-col items-center justify-between gap-2 md:gap-12 sm:flex-row sm:items-center   mb-6  ">
         {steps.map((stepData, index) => (
-        
-        <div key={index} className="flex items-center w-[300px] bg-gray-100 px-4 py-4 rounded-md shadow-lg shadow-green-300">
+          <div
+            key={index}
+            className={ `flex items-center w-[300px] bg-gray-100 px-4 py-4 rounded-md shadow-lg shadow-green-300   ${step === index + 1 ? "bg-green-700  " : "bg-gray-400"} `}
+            // className="flex items-center w-[300px] bg-gray-100 px-4 py-4 rounded-md shadow-lg shadow-green-300"
+          >
             <div
               className={`flex items-center justify-center w-12 h-12 rounded-full text-white 
-              ${step === index + 1 ? "bg-green-600" : "bg-gray-400"}
+              ${step === index + 1 ? "border  border-white" : "bg-gray-400"}
               shadow-lg`}
             >
               {stepData.icon}
             </div>
             <span
               className={`ml-2 text-sm sm:text-base font-semibold ${
-                step === index + 1 ? "text-green-600" : "text-gray-500"
+                step === index + 1 ? "text-white " : "text-gray-500"
               }`}
             >
               {stepData.title}
@@ -75,7 +81,6 @@ const MultiStageForm = () => {
           </div>
         ))}
       </div>
-
 
       {/* Form Content */}
       <div className="space-y-6">
