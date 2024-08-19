@@ -1,22 +1,27 @@
-/* eslint-disable react/prop-types */
-
+ /* eslint-disable react/prop-types */
 const ModalShow = ({ modalProduct }) => {
+  
+  console.log(modalProduct);
+  
   return (
     <div>
       <dialog id="my_modal_2" className="modal">
         <div className="modal-box p-4 max-w-lg mx-auto">
-          <h1 className="text-2xl font-semibold   text-center my-4 text-gray-500">
+          <h1 className="text-2xl font-semibold text-center my-4 text-gray-500">
             Product Details
           </h1>
           {modalProduct && (
             <div className="flex flex-col divide-y divide-gray-200">
               <div className="flex justify-center mb-4">
-                <img
-                  src={modalProduct.image}
-                  alt={modalProduct.title}
-                  className="w-48 h-48 object-cover rounded-t-lg border"
-                />
+           
+                  <img
+                    src={modalProduct?.image}
+                    alt={modalProduct.title}
+                    className="w-48 h-48 object-cover rounded-t-lg border" />
+              
+               
               </div>
+
               <section className="mb-8">
                 <div className="flex flex-col divide-y divide-gray-200">
                   <div className="flex items-center justify-between py-4 px-6 border-b border-gray-200">
@@ -82,7 +87,7 @@ const ModalShow = ({ modalProduct }) => {
                   <div className="flex items-center justify-between py-4 px-6 border-b border-gray-200">
                     <div className="w-1/2 font-medium">Total Stock</div>
                     <div className="w-1/2 break-words">
-                      {modalProduct?.totalStock}
+                      {modalProduct.totalStock}
                     </div>
                   </div>
                 </div>

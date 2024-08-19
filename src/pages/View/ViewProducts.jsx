@@ -14,6 +14,8 @@ const ViewProducts = () => {
   const [modalProduct, setModalProduct] = useState([]);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
+  console.log(products[0]);
+  
 
   const columns = [
     {
@@ -151,6 +153,7 @@ const ViewProducts = () => {
 
   const rows = products.map((product) => ({
     id: product.id,
+    image:product.photos[0],
     title: product.title,
     description: product.description,
     category: product.category,
@@ -193,7 +196,7 @@ const ViewProducts = () => {
   };
 
   return (
-    <div className="mt-8 max-w-7xl mx-auto">
+    <div className="mt-8 max-w-7xl mx-auto md:px-4">
       <Heading
         heading={"Show All Products"}
         subHeading={"Show details and do operations... "}

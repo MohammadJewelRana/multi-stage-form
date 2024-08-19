@@ -19,14 +19,19 @@ const Navbar = () => {
               to="/"
               className="hover:text-white transition-colors duration-300 md:mr-6 mr-3 hover:border p-2 rounded-md hover:bg-green-500 hover:transition-all hover:duration-300"
             >
-              Add Product
-            </Link>
+Add            </Link>
 
             <Link
               to="/view-products"
               className="hover:text-white transition-colors duration-300 md:mr-6 mr-3 hover:border p-2 rounded-md hover:bg-green-500 hover:transition-all hover:duration-300"
             >
-              View Product
+              View 
+            </Link>
+            <Link
+              to="/chart"
+              className="hover:text-white transition-colors duration-300 md:mr-6 mr-3 hover:border p-2 rounded-md hover:bg-green-500 hover:transition-all hover:duration-300"
+            >
+              Chart  
             </Link>
           </div>
         </div>
