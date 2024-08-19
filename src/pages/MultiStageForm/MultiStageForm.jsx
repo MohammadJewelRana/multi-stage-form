@@ -7,6 +7,7 @@ import AddPhoto from "./AddPhoto";
 import Review from "./Review";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/productSlice";
+import Swal from "sweetalert2";
 
 const MultiStageForm = () => {
   const [step, setStep] = useState(1);
@@ -36,12 +37,35 @@ const MultiStageForm = () => {
   };
 
   const handleSubmit = () => {
-    // dispatch(addProduct({ id: Date.now(), ...formData }));
-    // setStep(1);
-    // setFormData({});
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Add it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        try {
+          dispatch(addProduct({ id: Date.now(), ...formData }));
+          Swal.fire({
+            title: "Added!",
+            text: "Your Product has been Added.",
+            icon: "success",
+          });
 
-    console.log(formData);
-    
+          // setStep(1);
+          // setFormData({});
+        } catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: error.message || 'Something went wrong!',
+          });
+        }
+      }  
+    });
   };
 
   const steps = [
@@ -58,7 +82,9 @@ const MultiStageForm = () => {
         {steps.map((stepData, index) => (
           <div
             key={index}
-            className={ `flex items-center w-[300px] bg-gray-100 px-4 py-4 rounded-md shadow-lg shadow-green-300   ${step === index + 1 ? "bg-green-700  " : "bg-gray-400"} `}
+            className={`flex items-center w-[300px] bg-gray-100 px-4 py-4 rounded-md shadow-lg shadow-green-300   ${
+              step === index + 1 ? "bg-green-700  " : "bg-gray-200"
+            } `}
             // className="flex items-center w-[300px] bg-gray-100 px-4 py-4 rounded-md shadow-lg shadow-green-300"
           >
             <div
@@ -70,7 +96,7 @@ const MultiStageForm = () => {
             </div>
             <span
               className={`ml-2 text-sm sm:text-base font-semibold ${
-                step === index + 1 ? "text-white " : "text-gray-500"
+                step === index + 1 ? "text-white " : " text-black"
               }`}
             >
               {stepData.title}
