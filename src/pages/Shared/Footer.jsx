@@ -1,88 +1,34 @@
  
-import { Container, Grid, Typography, Link, Box } from '@mui/material';
 
 const Footer = () => {
   return (
-   <div className='mt-24'>
-      <Box
-      component="footer"
-      sx={{
-        backgroundColor: '#f5f5f5',
-        padding: '20px 0',
-        borderTop: '1px solid #e0e0e0',
-      }}
-    >
-      <Container>
-        <Grid container spacing={4}>
-          {/* Column 1 */}
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
-              Company
-            </Typography>
-            <Link href="#" color="inherit" variant="body2">
-              About Us
-            </Link>
-            <br />
-            <Link href="#" color="inherit" variant="body2">
-              Careers
-            </Link>
-            <br />
-            <Link href="#" color="inherit" variant="body2">
-              Contact Us
-            </Link>
-          </Grid>
-
-          {/* Column 2 */}
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
-              Services
-            </Typography>
-            <Link href="#" color="inherit" variant="body2">
-              Product Support
-            </Link>
-            <br />
-            <Link href="#" color="inherit" variant="body2">
-              Documentation
-            </Link>
-            <br />
-            <Link href="#" color="inherit" variant="body2">
-              API
-            </Link>
-          </Grid>
-
-          {/* Column 3 */}
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
-              Follow Us
-            </Typography>
-            <Link href="#" color="inherit" variant="body2">
-              Facebook
-            </Link>
-            <br />
-            <Link href="#" color="inherit" variant="body2">
-              Twitter
-            </Link>
-            <br />
-            <Link href="#" color="inherit" variant="body2">
-              Instagram
-            </Link>
-          </Grid>
-        </Grid>
-
-        {/* Bottom Copyright */}
-        <Box
-          sx={{
-            marginTop: '20px',
-            textAlign: 'center',
-          }}
-        >
-          <Typography variant="body2" color="textSecondary">
-            © {new Date().getFullYear()} Your Company. All rights reserved.
-          </Typography>
-        </Box>
-      </Container>
-    </Box>
-   </div>
+    <div>
+      <div className="flex justify-center items-center min-h-[200px] bg-neutral text-neutral-content p-10">
+        <footer className="footer flex justify-around w-full max-w-screen-lg">
+          <nav>
+            <h6 className="footer-title">Services</h6>
+            <a className="link link-hover">Branding</a>
+            <a className="link link-hover">Design</a>
+            <a className="link link-hover">Marketing</a>
+            <a className="link link-hover">Advertisement</a>
+          </nav>
+          <nav>
+            <h6 className="footer-title">Company</h6>
+            <a className="link link-hover">About us</a>
+            <a className="link link-hover">Contact</a>
+            <a className="link link-hover">Jobs</a>
+            <a className="link link-hover">Press kit</a>
+          </nav>
+          <nav>
+            <h6 className="footer-title">Legal</h6>
+            <a className="link link-hover">Terms of use</a>
+            <a className="link link-hover">Privacy policy</a>
+            <a className="link link-hover">Cookie policy</a>
+          </nav>
+        </footer>
+      </div>
+   
+    </div>
   );
 };
 

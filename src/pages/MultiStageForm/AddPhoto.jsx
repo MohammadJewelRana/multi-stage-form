@@ -22,6 +22,8 @@ const AddPhoto = ({ formData, setFormData, onNext, onBack }) => {
       setError('Please select at least one photo.');
       return;
     }
+    console.log(photos);
+    
     setFormData({ ...formData, photos });
     onNext();
   };
@@ -46,7 +48,7 @@ const AddPhoto = ({ formData, setFormData, onNext, onBack }) => {
             multiple
             onChange={handleFileChange}
             className="block w-full text-gray-700 border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-            required // Ensure the file input is required
+            required  
           />
           {error && (
             <p className="text-red-500 text-sm mt-2">{error}</p>

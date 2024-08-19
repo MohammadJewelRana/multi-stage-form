@@ -55,8 +55,8 @@ const MultiStageForm = () => {
             icon: "success",
           });
 
-          // setStep(1);
-          // setFormData({});
+          setStep(1);
+          setFormData({});
         } catch (error) {
           Swal.fire({
             icon: 'error',
@@ -85,7 +85,7 @@ const MultiStageForm = () => {
             className={`flex items-center w-[300px] bg-gray-100 px-4 py-4 rounded-md shadow-lg shadow-green-300   ${
               step === index + 1 ? "bg-green-700  " : "bg-gray-200"
             } `}
-            // className="flex items-center w-[300px] bg-gray-100 px-4 py-4 rounded-md shadow-lg shadow-green-300"
+          
           >
             <div
               className={`flex items-center justify-center w-12 h-12 rounded-full text-white 

@@ -1,8 +1,6 @@
- 
- 
-/* eslint-disable react/prop-types */
-import { useForm } from 'react-hook-form';
-import Heading from '../Shared/Heading';
+ /* eslint-disable react/prop-types */
+import { useForm } from "react-hook-form";
+import Heading from "../Shared/Heading";
 
 const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
   const {
@@ -35,6 +33,7 @@ const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
           </label>
           <input
             type="number"
+            step="0.01"
             {...register("weight", { required: "Weight is required" })}
             placeholder="Weight"
             className={`shadow appearance-none border rounded w-full text-lg py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
@@ -42,7 +41,9 @@ const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
             }`}
           />
           {errors.weight && (
-            <p className="text-red-500 text-xs italic">{errors.weight.message}</p>
+            <p className="text-red-500 text-xs italic">
+              {errors.weight.message}
+            </p>
           )}
         </div>
 
@@ -52,6 +53,7 @@ const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
           </label>
           <input
             type="number"
+            step="0.01"
             {...register("length", { required: "Length is required" })}
             placeholder="Length"
             className={`shadow appearance-none border rounded w-full text-lg py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
@@ -59,7 +61,9 @@ const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
             }`}
           />
           {errors.length && (
-            <p className="text-red-500 text-xs italic">{errors.length.message}</p>
+            <p className="text-red-500 text-xs italic">
+              {errors.length.message}
+            </p>
           )}
         </div>
 
@@ -69,6 +73,7 @@ const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
           </label>
           <input
             type="number"
+            step="0.01"
             {...register("height", { required: "Height is required" })}
             placeholder="Height"
             className={`shadow appearance-none border rounded w-full text-lg py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
@@ -76,7 +81,9 @@ const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
             }`}
           />
           {errors.height && (
-            <p className="text-red-500 text-xs italic">{errors.height.message}</p>
+            <p className="text-red-500 text-xs italic">
+              {errors.height.message}
+            </p>
           )}
         </div>
 
@@ -86,6 +93,7 @@ const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
           </label>
           <input
             type="number"
+            step="0.01"
             {...register("width", { required: "Width is required" })}
             placeholder="Width"
             className={`shadow appearance-none border rounded w-full text-lg py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
@@ -93,7 +101,9 @@ const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
             }`}
           />
           {errors.width && (
-            <p className="text-red-500 text-xs italic">{errors.width.message}</p>
+            <p className="text-red-500 text-xs italic">
+              {errors.width.message}
+            </p>
           )}
         </div>
 
@@ -103,6 +113,7 @@ const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
           </label>
           <input
             type="number"
+        
             {...register("totalStock", { required: "Total stock is required" })}
             placeholder="Total Stock"
             className={`shadow appearance-none border rounded w-full text-lg py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
@@ -110,7 +121,9 @@ const InventoryDetails = ({ formData, setFormData, onNext, onBack }) => {
             }`}
           />
           {errors.totalStock && (
-            <p className="text-red-500 text-xs italic">{errors.totalStock.message}</p>
+            <p className="text-red-500 text-xs italic">
+              {errors.totalStock.message}
+            </p>
           )}
         </div>
 

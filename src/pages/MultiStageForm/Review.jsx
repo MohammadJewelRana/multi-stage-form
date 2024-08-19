@@ -1,5 +1,5 @@
- /* eslint-disable react/prop-types */
-import Heading from '../Shared/Heading';
+/* eslint-disable react/prop-types */
+import Heading from "../Shared/Heading";
 
 const ReviewPage = ({ formData, onBack, onSubmit }) => {
   return (
@@ -13,14 +13,15 @@ const ReviewPage = ({ formData, onBack, onSubmit }) => {
       <section className="mb-6">
         <h2 className="text-xl font-bold mb-4">Product Photos</h2>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          {formData.photos && formData.photos.map((photo, index) => (
-            <img
-              key={index}
-              src={photo}
-              alt={`Product Photo ${index}`}
-              className="w-32 h-32 object-cover border rounded-full"
-            />
-          ))}
+          {formData.photos &&
+            formData.photos.map((photo, index) => (
+              <img
+                key={index}
+                src={photo}
+                alt={`Product Photo ${index}`}
+                className="w-32 h-32 object-cover border rounded-full"
+              />
+            ))}
         </div>
       </section>
 

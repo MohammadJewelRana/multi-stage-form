@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+ /* eslint-disable react/prop-types */
 import { useForm } from "react-hook-form";
 import Heading from "../Shared/Heading";
 
@@ -93,8 +93,11 @@ const ProductDetails = ({ formData, setFormData, onNext }) => {
           </label>
           <input
             type="number"
+            step="0.01"
             {...register("regularPrice", {
               required: "Regular price is required",
+              valueAsNumber: true,  
+              min: { value: 0, message: "Price must be a positive number" },
             })}
             placeholder="Regular Price"
             className={`shadow appearance-none border rounded w-full text-lg py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
@@ -114,7 +117,12 @@ const ProductDetails = ({ formData, setFormData, onNext }) => {
           </label>
           <input
             type="number"
-            {...register("extraPrice", { required: "Extra price is required" })}
+            step="0.01"
+            {...register("extraPrice", {
+              required: "Extra price is required",
+              valueAsNumber: true, 
+              min: { value: 0, message: "Price must be a positive number" },
+            })}
             placeholder="Extra Price"
             className={`shadow appearance-none border rounded w-full text-lg py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
               errors.extraPrice ? "border-red-500" : ""
@@ -133,7 +141,12 @@ const ProductDetails = ({ formData, setFormData, onNext }) => {
           </label>
           <input
             type="number"
-            {...register("taxAmount", { required: "Tax amount is required" })}
+            step="0.01"
+            {...register("taxAmount", {
+              required: "Tax amount is required",
+              valueAsNumber: true,  
+              min: { value: 0, message: "Tax amount must be a positive number" },
+            })}
             placeholder="Tax Amount"
             className={`shadow appearance-none border rounded w-full text-lg py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
               errors.taxAmount ? "border-red-500" : ""
